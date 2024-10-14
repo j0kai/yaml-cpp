@@ -18,22 +18,26 @@ project "yaml-cpp"
     "include"
   }
 
-  defines
-  {
-    "YAML_CPP_STATIC_DEFINE"
-  }
-  
-
   filter "system:windows"
     systemversion "latest"
     cppdialect "C++20"
     staticruntime "On"
+
+    defines
+    {
+        "YAML_CPP_STATIC_DEFINE",
+    }
 
   filter "system:linux"
     pic "On"
     systemversion "latest"
     cppdialect "C++20"
     staticruntime "On"
+
+    defines
+    {
+        "YAML_CPP_STATIC_DEFINE",
+    }
 
   filter "configurations:Debug"
     runtime "Debug"
