@@ -18,6 +18,12 @@ project "yaml-cpp"
     "include"
   }
 
+  defines
+  {
+    "YAML_CPP_STATIC_DEFINE"
+  }
+  
+
   filter "system:windows"
     systemversion "latest"
     cppdialect "C++20"
@@ -29,10 +35,10 @@ project "yaml-cpp"
     cppdialect "C++20"
     staticruntime "On"
 
-  filter "configuration:Debug"
+  filter "configurations:Debug"
     runtime "Debug"
     symbols "on"
 
-  filter "configuration:Release"
+  filter "configurations:Release"
     runtime "Release"
     optimize "on"
